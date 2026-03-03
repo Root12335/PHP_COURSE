@@ -2,41 +2,85 @@
 <html>
 <head>
     <title>Add User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
-<h2>Add User</h2>
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Add New User</h4>
+        </div>
 
-<form action="save.php" method="post">
+        <div class="card-body">
+            <form action="save.php" method="post">
 
-    <input type="text" name="first_name" placeholder="First Name" required><br><br>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" name="first_name" class="form-control" required>
+                    </div>
 
-    <input type="text" name="last_name" placeholder="Last Name" required><br><br>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" name="last_name" class="form-control" required>
+                    </div>
+                </div>
 
-    <textarea name="address" placeholder="Address" required></textarea><br><br>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <textarea name="address" class="form-control" rows="3" required></textarea>
+                </div>
 
-    <select name="country" required>
-        <option value="">Select Country</option>
-        <option value="Egypt">Egypt</option>
-        <option value="USA">USA</option>
-    </select><br><br>
+                <div class="mb-3">
+                    <label class="form-label">Country</label>
+                    <select name="country" class="form-select" required>
+                        <option value="">Select Country</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
 
-    Gender:
-    <input type="radio" name="gender" value="male" required> Male
-    <input type="radio" name="gender" value="female" required> Female
-    <br><br>
+                <div class="mb-3">
+                    <label class="form-label">Gender</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="male" required>
+                        <label class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="female">
+                        <label class="form-check-label">Female</label>
+                    </div>
+                </div>
 
-    Skills:
-    <input type="checkbox" name="skills[]" value="PHP"> PHP
-    <input type="checkbox" name="skills[]" value="MySQL"> MySQL
-    <input type="checkbox" name="skills[]" value="JS"> JS
-    <br><br>
+                <div class="mb-3">
+                    <label class="form-label">Skills</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="skills[]" value="PHP">
+                        <label class="form-check-label">PHP</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="skills[]" value="MySQL">
+                        <label class="form-check-label">MySQL</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="skills[]" value="JS">
+                        <label class="form-check-label">JS</label>
+                    </div>
+                </div>
 
-    <input type="text" name="department" placeholder="Department" required><br><br>
+                <div class="mb-3">
+                    <label class="form-label">Department</label>
+                    <input type="text" name="department" class="form-control" required>
+                </div>
 
-    <button type="submit">Save</button>
+                <button type="submit" class="btn btn-success">Save User</button>
+                <a href="list.php" class="btn btn-secondary">View Users</a>
 
-</form>
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
