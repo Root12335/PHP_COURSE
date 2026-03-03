@@ -51,7 +51,12 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= str_replace("|", ", ", $user["skills"]) ?></td>
                         <td><?= $user["department"] ?></td>
                         <td>
-                            <a href="edit.php?id=<?= $user["id"] ?>" 
+                        <a href="view.php?id=<?= $user["id"] ?>" 
+                         class="btn btn-info btn-sm">
+                             View
+                            </a>   
+                        
+                        <a href="edit.php?id=<?= $user["id"] ?>" 
                                class="btn btn-warning btn-sm">
                                Edit
                             </a>
