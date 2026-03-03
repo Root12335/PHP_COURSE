@@ -1,7 +1,7 @@
 <?php
 require "db.php";
 
-$stmt = $conn->query("SELECT * FROM users ORDER BY id ");
+$stmt = $conn->query("SELECT * FROM users ORDER BY id");
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -32,6 +32,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th>Gender</th>
                         <th>Skills</th>
                         <th>Department</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,17 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </td>
                         <td><?= str_replace("|", ", ", $user["skills"]) ?></td>
                         <td><?= $user["department"] ?></td>
+                        <td>
+                            <a href="edit.php?id=<?= $user["id"] ?>" 
+                               class="btn btn-warning btn-sm">
+                               Edit
+                            </a>
+
+                            <a href="delete.php?id=<?= $user["id"] ?>" 
+                               class="btn btn-danger btn-sm">
+                               Delete
+                            </a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
 
