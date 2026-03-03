@@ -1,4 +1,4 @@
-<form action="day1_2.php" method="post">
+<form action="save.php" method="post">
 
 <input type="text" name="first_name" placeholder="First Name" required><br>
 
