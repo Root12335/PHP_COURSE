@@ -66,6 +66,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                Delete
                             </a>
                         </td>
+                        <td>
+                            <img src="<?= $user["image"] ?>" width="50" style="border-radius:50%">
+                        </td>
                     </tr>
                 <?php endforeach; ?>
 
