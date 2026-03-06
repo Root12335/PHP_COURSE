@@ -13,7 +13,7 @@
         </div>
 
         <div class="card-body">
-            <form action="save.php" method="post">
+            <form action="save.php" method="post" enctype="multipart/form-data" >
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -73,6 +73,27 @@
                     <label class="form-label">Department</label>
                     <input type="text" name="department" class="form-control" required>
                 </div>
+
+
+                <div class="row">
+
+                <div class="col-md-6 mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required>
+                </div>
+
+                </div>
+
+                    <div class="mb-3">
+                    <label class="form-label">Profile Picture</label>
+                    <input type="file" name="image" class="form-control">
+                    </div>
+
 
                 <button type="submit" class="btn btn-success">Save User</button>
                 <a href="list.php" class="btn btn-secondary">View Users</a>
