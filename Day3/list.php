@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["username"])) {
+    header("Location: login.php");
+    exit;
+}
+
 require "db.php";
 
 $stmt = $conn->query("SELECT * FROM users ORDER BY id");
